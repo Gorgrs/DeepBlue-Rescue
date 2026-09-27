@@ -82,4 +82,7 @@ public class RescueCase {
     public Animal getAnimal() {
         return animal;
     }
+    public void setStatus(RescueStatus status) {
+        this.status = status;
+    }
 }

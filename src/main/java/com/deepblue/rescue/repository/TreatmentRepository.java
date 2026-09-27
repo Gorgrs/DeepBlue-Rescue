@@ -11,6 +11,8 @@ public interface TreatmentRepository extends JpaRepository<Treatment, Long> {
 
     List<Treatment> findByAnimalIdOrderByPerformedAtDesc(Long animalId);
 
+    List<Treatment> findByAnimalAnimalCodeOrderByPerformedAtAsc(String animalCode);
+
     List<Treatment> findBySpecialistIdOrderByPerformedAtDesc(Long specialistId);
 
     @Query("SELECT COUNT(t) FROM Treatment t WHERE t.animal.id = :animalId")

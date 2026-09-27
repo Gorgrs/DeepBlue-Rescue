@@ -19,7 +19,7 @@ public interface RescueCaseRepository extends JpaRepository<RescueCase, Long> {
     List<RescueCase> findByRescueCenterId(Long rescueCenterId);
 
     List<RescueCase> findByRescueDateBetween(LocalDate startDate, LocalDate endDate);
-
+    List<RescueCase> findByStatusOrderByRescueDateAsc(RescueStatus status);
     @Query("SELECT rc FROM RescueCase rc JOIN FETCH rc.rescueCenter WHERE rc.status = :status")
     List<RescueCase> findByStatusFetchingCenter(@Param("status") RescueStatus status);
 }
